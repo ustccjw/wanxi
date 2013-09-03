@@ -1,0 +1,136 @@
+/*--------remove default property------------*/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td {margin:0; padding:0;}
+p {margin:13px 0;}
+a {text-decoration:none; hide-focus:expression(this.hideFocus=true);}
+ul {list-style-type:none;}
+img {border:none;}
+
+
+/*------------------basic form-----------------*/
+form div.wrap {margin-bottom:20px;}
+form label {display:inline-block; margin-right:10px; vertical-align:middle; color:#4D4D4F;}
+input, textarea {width:200px; padding:9px; border:solid 1px #E5E5E5; outline:0; font:normal 13px/100% Verdana, Tahoma, sans-serif;
+				 vertical-align:middle; background:#FFFFFF;  
+                 background:-webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
+                 background:-moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
+				 -moz-box-shadow:rgba(0,0,0, 0.1) 0px 0px 8px; 
+				 -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+				 box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;}  
+textarea {width:400px; max-width:400px; height:150px; line-height:150%; -webkit-box-shadow:rgba(0, 0, 0, 0.15) 0px 0px 8px;}    
+input:hover, textarea:hover, input:focus, textarea:focus {border-color:#C9C9C9;}  
+.submit input {width:auto; padding:9px 10px; border:0; background:#617798; color:#FFFFFF; font-size:14px;
+			   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;} 
+.submit input:hover {cursor:pointer;}
+
+
+/*-------------------clear float-------------------------*/
+.clear {clear:both; line-height:0px; font-size:1px; height:0px;}
+
+
+/*----------------common-----------*/
+body {min-width:1000px; background: url(/img/index/page.png) #DAE1DE repeat-x; font:13px "trebuchet ms","微软雅黑E\8F6F\96C5\9ED1",helvetica,Arial;}
+#header {background:url(/img/index/header.jpg) repeat-x #EEE; color:#fff;}
+#header h1 {padding:40px 0; font-size:35px; text-align:center; letter-spacing:10px;}
+#header h2 {color:#fff;}
+
+#nav {background:rgb(10, 42, 55); color:#fff; font-size:14px;}
+#nav ul {width:850px; margin:0 auto;}
+#nav li {float:left;}
+#nav a {width:75px; display:block; text-align:center; line-height:2.5em; border-right:1px solid gray; color:#fff;}
+#nav a.last {border:none;}
+#nav a:hover {background:green; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; behavior:url(/css/PIE.htc);}
+#nav time {display:block; text-align:center; line-height:2.5em;}
+#nav li.last {float:right;}
+#nav {*margin-bottom:20px;}  /* PIE导致的 IE6/7 bug */
+
+#container {width:830px; margin:20px auto; padding:20px; background:#fff;
+			-webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px;
+			behavior:url(/css/PIE.htc);}
+
+#footer {height:55px; background:transparent url(/img/index/footer.png);}
+#footer ul {width:650px; padding-top:17px; margin:0 auto;}
+#footer li {float:left; margin-left:30px;}
+
+
+/*--------------------index.html----------------------*/
+.index #slidewrap {position:relative; width:750px; height:300px; padding:10px; margin-left:30px; overflow:hidden; border:1px gray solid; background:#fff;
+			-webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px;
+			/*-moz-box-shadow:1px 1px 2px hsla(0,0%,0%,.3); -webkit-box-shadow:1px 1px 2px hsla(0,0%,0%,.3); box-shadow:1px 1px 2px hsla(0,0%,0%,.3);*/
+		    behavior:url(/css/PIE.htc);}
+.index .hidden {display:none;}
+.index #prevnext {display:none;}
+.index #slidewrap.hover #prevnext {display:block;}
+.index #prevnext a {display:block; position:absolute; top:140px; z-index:2; cursor:pointer; text-indent:-9999px;}
+.index a.jFlowPrev {left:0px; width:48px; height:48px; background:url(/img/index/prev_next.png) left no-repeat; filter:alpha(opacity=70);}
+.index a.jFlowNext {left:720px; width:48px; height:48px; background:url(/img/index/prev_next.png) right no-repeat; filter:alpha(opacity=70);}
+.index #slides p {position:relative; top:-50px; height:50px; margin:0; padding:0 1em; font-size:1.5em; line-height:50px; background:black;
+		   color:white; opacity:0.7; filter:alpha(opacity=70);}
+.index #slidewrap img {width:100%; height:300px;
+				-moz-box-shadow:1px 1px 2px hsla(0,0%,0%,.3); -webkit-box-shadow:1px 1px 2px hsla(0,0%,0%,.3); box-shadow:1px 1px 2px hsla(0,0%,0%,.3);}
+
+.index #content {position:relative; padding-left:210px; padding-right:160px; margin-top:20px;}
+.index #content .column {background:#fff; border:1px gray solid;
+				  -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;
+	              /*-moz-box-shadow:1px 1px 2px hsla(0,0%,0%,.3); -webkit-box-shadow:1px 1px 2px hsla(0,0%,0%,.3); box-shadow:1px 1px 2px hsla(0,0%,0%,.3);*/
+	              behavior:url(/css/PIE.htc);}
+.index #content .column .more {position:absolute; right:10px; bottom:10px;}
+.index #content #news {position:relative; width:100%; height:200px; padding-bottom:20px;}
+.index #content #inform {position:absolute; left:0; top:0; width:200px; height:200px; padding-bottom:20px;}
+.index #content #link {position:absolute; right:0; top:0; width:150px; height:200px; padding-bottom:20px;}
+.index #content h2 {width:100%; text-align:center; font-size:16px; font-weight:normal; color:rgb(194, 77, 51); border-bottom:1px solid gray; background:rgb(222, 224, 224);
+		     -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;
+			 behavior:url(/css/PIE.htc);}
+.index #content ul {margin:20px 20px;}
+.index #content ul li {padding-left:20px; margin-bottom:10px; background:url(/img/index/news.jpg) 0px 5px no-repeat;}
+.index #content a {color:#2B537E;}
+.index #content a:hover {color:#528310;}
+* html .index #content {height:1%;} /* IE6 relative bug */
+
+
+/*-----------------admin.html------------------*/
+.admin nav {margin-bottom:30px;}
+.admin nav ul {width:700px; margin:0 auto;}
+.admin nav li {float:left;}
+.admin nav a {width:100px; display:block; text-align:center; line-height:2.5em; border:1px solid gray; color:black;}
+.admin nav a.selected, .admin nav a:hover {background:rgb(135, 165, 207); color:#fff; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+.admin section {width:700px; margin:50px auto;}
+.admin form {margin-top:20px;}
+
+
+/*------------------login.html---------------*/
+.login form {width:300px; margin:100px auto;}
+
+
+/*------------------news.html----------------*/
+.news h2 {text-align:center;}
+.news time {display:block; width:100%; text-align:center; margin:10px 0;}
+.news img {display:block; width:500px; height:300px; margin:0 auto;}
+.news #content {margin:40px 20px; text-align:justify; line-height:1.7em; word-wrap:break-word;}
+.news #content p {text-indent:2em;}
+
+
+
+/*-----------------wanxi.html----------------------*/
+.wanxi h2 {text-align:center; margin-bottom:10px;}
+.wanxi img {display:block; width:500px; height:300px; margin:0 auto;}
+.wanxi figcaption {width:100px; margin:10px auto;}
+.wanxi #content {margin:40px 20px; text-align:justify; line-height:1.7em;}
+.wanxi #content p {text-indent:2em;}
+
+
+
+/*------------------informlist.html----------------------*/
+.informlist ul {margin:20px 100px;}
+.informlist li {margin-bottom:30px;}
+.informlist li .time {margin-left:50px;}
+
+
+
+/*------------------newslist.html----------------------*/
+.newslist ul {margin:20px 100px;}
+.newslist li {margin-bottom:30px;}
+.newslist li .time {margin-left:50px;}
+.newslist li a {color:#2B537E;}
+.newslist li a:hover {color:#528310;}
+
+

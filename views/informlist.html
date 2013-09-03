@@ -1,0 +1,16 @@
+<% include header.html %>
+	<div id="container" class="informlist">
+		<h2>通知列表</h2>
+		<ul>
+			<% informs.forEach(function(listItem){ %> 
+				<li><span class="content"><%= listItem.content %></span>
+					<span class="time">
+						<% var date = new Date(listItem.time) ; 
+							var str = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate() ; %>
+						<%= str %>
+					</span>
+				</li>
+			<% }) %>
+		</ul>
+	</div>
+<% include footer.html %>

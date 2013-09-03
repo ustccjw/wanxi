@@ -1,0 +1,55 @@
+<%- include header.html %>
+
+		<div id="container" class="index">
+			<div id="slidewrap">
+				<div id="controller" class="hidden">
+					<% slides.forEach(function(item, index){ %>
+						<span class="jFlowControl">NO <%= (index+1) %></span>
+					<% }) %>
+				</div>
+				<div id="slides">
+					<% slides.forEach(function(item, index){ %>
+						<div><img src="img/index/<%= item.img %>" /><p><%= item.disc %></p></div>
+					<% }) %>
+				</div>
+				<div id="prevnext">
+					<a href="#" class="jFlowPrev">prev</a>
+					<a href="#" class="jFlowNext">next</a>
+				</div>
+			</div>
+
+			<div id="content">
+				<section id="news" class="column">
+					<h2>校园新闻</h2>
+					<ul>
+						<% news.forEach(function(listItem){ %> 
+							<li><a href="/news?time=<%= listItem.time %>"><%= listItem.title %></a></li>
+						<% }) %>
+					</ul>
+					<a class="more" href="/newslist">更多  ›</a>
+				</section>
+				<section id="inform" class="column">
+					<h2>通知公告</h2>
+					<ul>
+						<% informs.forEach(function(listItem){ %> 
+							<li><span><%= listItem.content %></span></li>
+						<% }) %>
+					</ul>
+					<a class="more" href="/informlist">更多  ›</a>
+				</section>
+				<section id="link" class="column">
+					<h2>常用链接</h2>
+					<ul>
+						<li><a href="#">各年级课程表</a></li>
+						<li><a href="http://www.lajy.net/">六安市教育网</a></li>
+						<li><a href="http://www.czxxw.com/">初中学习网</a></li>
+						<li><a href="http://www.gaoqingditu.com/liuan/">六安地图</a></li>
+					</ul>
+				</section>
+				
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+
+<%- include footer.html %>

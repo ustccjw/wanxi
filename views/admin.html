@@ -1,0 +1,151 @@
+<%- include header.html %>
+	<div id="container" class="admin">
+		<nav>
+			<ul>
+				<li class="first"><a id="news" href="#">校园新闻</a></li>
+				<li><a id="inform" href="#">通知公告</a></li>
+				<li class="last"><a id="slide" href="#">首页幻灯片</a></li>
+			</ul>
+			<div class="clear"></div>
+		</nav>
+		<div class="module first">
+		<section>
+			<h2>添加校园新闻</h2>
+			<form action="/admin/addnews" method="post" enctype="multipart/form-data">
+				<div class="wrap">
+					<label for="addNewsTitle">新闻标题</label>
+					<input id="addNewsTitle" name="title" autofocus />
+				</div>
+				<div class="wrap">
+					<label for="addNewsContent">新闻内容</label><br/>
+					<textarea id="addNewsContent" name="content"></textarea>
+				</div>
+				<div class="wrap">
+					<label for="addNewsImg">插入图片</label>
+					<input type="file" id="addNewsImg" name="img" />
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="添加新闻" />
+				</div>
+			</form>
+		</section>
+		<section>
+			<h2>修改校园新闻</h2>
+			<form action="/admin/updatenews" method="post" enctype="multipart/form-data">
+				<div class="wrap">
+					<label for="updateNewsTitle">新闻标题</label>
+					<select id="updateNewsTitle" name="title" />
+						<% news.forEach(function(optionItem){ %> 
+							<option><%= optionItem.title %></option>
+						<% }) %>
+					</select>
+				</div>
+				<div class="wrap">
+					<label for="updateNewsContent">新闻内容</label><br/>
+					<textarea id="updateNewsContent" name="content"></textarea>
+				</div>
+				<div class="wrap">
+					<label for="updateNewsImg">更新图片</label>
+					<input type="file" id="updateNewsImg" name="img" />
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="更新新闻" />
+				</div>
+			</form>
+		</section>
+		<section>
+			<h2>删除校园新闻</h2>
+			<form action="/admin/delnews" method="post">
+				<div class="wrap">
+					<label for="deleteNewsTitle">新闻标题</label>
+					<select id="deleteNewsTitle" name="title">
+						<% news.forEach(function(optionItem){ %>
+							<option><%= optionItem.title %></option>
+						<% }) %>
+					</select>
+				</div>
+				<div class="wrap">
+					<label for="deleteNewsContent">新闻内容</label><br />
+					<textarea id="deleteNewsContent" name="content" readonly="readonly"></textarea>
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="删除新闻" />
+				</div>
+			</form>
+		</section>
+		</div>
+
+		<div class="module">
+		<section>
+			<h2>添加通知公告</h2>
+			<form action="/admin/addinform" method="post">
+				<div class="wrap">
+					<label for="addInform">通知公告</label>
+					<input id="addInform" name="content" />
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="添加通知" />
+				</div>
+			</form>
+		</section>
+		<section>
+			<h2>删除通知公告</h2>
+			<form action="/admin/delinform" method="post">
+				<div class="wrap">
+					<label for="deleteInform">通知公告</label>
+					<select id="deleteInform" name="content">
+						<% informs.forEach(function(optionItem){ %>
+							<option><%= optionItem.content %></option>
+						<% }) %>
+					</select>
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="删除通知" />
+				</div>
+			</form>
+		</section>
+		</div>
+
+		<div class="module last">
+		<section>
+			<h2>添加首页幻灯片</h2>
+			<form action="/admin/addslide" method="post" enctype="multipart/form-data">
+				<div class="wrap">
+					<label for="addSlideImg">幻灯片</label>
+					<input type="file" id="addSlideImg" name="img" />
+				</div>
+				<div class="wrap">
+					<label for="addSlideDisc">描&nbsp;&nbsp;&nbsp;述</label>
+					<input id="addSlideDisc" name="disc" />
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="添加幻灯片" />
+				</div>
+			</form>
+		</section>
+		<section>
+			<h2>删除首页幻灯片</h2>
+			<form action="/admin/delslide" method="post">
+				<div class="wrap">
+					<label for="deleteSlideDisc">描&nbsp;&nbsp;&nbsp;述</label>
+					<select id="deleteSlideDisc" name="disc">
+						<% slides.forEach(function(optionItem){ %>
+							<option><%= optionItem.disc %></option>
+						<% }) %>
+					</select>
+				</div>
+				<div class="wrap submit">
+					<input type="submit" value="删除幻灯片" />
+				</div>
+			</form>
+		</section>
+		</div>
+	</div>
+<% if(type){ %>
+	<script>
+		window.onload = function(){
+			$('.admin #<%= type %>').click() ;
+		}
+	</script>
+<% } %>
+<%- include footer.html %>

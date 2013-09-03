@@ -1,0 +1,19 @@
+<% include header.html %>
+	<div id="container" class="news">
+		<acticle>
+			<header>
+				<h2><%= news.title %></h2>
+				<time>
+					<% var date = new Date(news.time) ; 
+					   var str = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate() ; %>
+					<%= str %>
+				</time>
+			</header>
+			
+			<figure>
+				<img src="img/news/<%= news.img %>" />
+			</figure>
+			<div id="content"><%- news.content %></div>
+		</acticle>
+	</div>
+<% include footer.html %>
